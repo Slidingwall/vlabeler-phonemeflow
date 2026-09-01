@@ -1,4 +1,4 @@
-# vlabler-phonemeflow
+# vlabeler-phonemeflow
 
 Experimental labeler for UTAU/DeepVocal/VocalSharp/Vocaloid etc in vLabeler, still in development.  
 Using scripts to export separated labeling lines from a continuous labeling file.  
