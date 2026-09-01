@@ -1,0 +1,246 @@
+{
+    "name": "phonemeflow-exporter",
+    "version": 3,
+    "type": "macro",
+    "displayedName": {
+        "en": "Export phoneme flow (.json → formats)",
+        "zh": "导出音素流为各格式",
+        "ja": "音素フロー書き出し（.json → 各形式）"
+    },
+    "description": {
+        "en": "Export phoneme flow to engine label files.",
+        "zh": "将音素流导出为各引擎标注文件。",
+        "ja": "音素フローを各エンジンのラベルファイルに書き出す。"
+    },
+    "author": "slidingwall",
+    "email": "slidingwall@outlook.com",
+    "website": "slidingwall.github.io",
+    "supportedLabelFileExtension": "json",
+    "scope": "Project",
+    "resourceFiles": [
+        "phonemes.json",
+        "VC.json",
+        "xsampa.json",
+        "alias.json"
+    ],
+    "parameters": {
+        "list": [
+            {
+                "type": "enum",
+                "name": "format",
+                "label": {
+                    "en": "Export format",
+                    "zh": "导出格式",
+                    "ja": "書き出し形式"
+                },
+                "defaultValue": "UTAU",
+                "options": [
+                    "UTAU",
+                    "DeepVocal",
+                    "VocalSharp",
+                    "Vocaloid"
+                ]
+            },
+            {
+                "type": "enum",
+                "name": "mode",
+                "label": {
+                    "en": "Entry type",
+                    "zh": "条目类型",
+                    "ja": "エントリ種別"
+                },
+                "defaultValue": "CVVC",
+                "options": [
+                    "CVVC",
+                    "VCV"
+                ]
+            },
+            {
+                "type": "string",
+                "name": "pitchSuffix",
+                "label": {
+                    "en": "Pitch suffix",
+                    "zh": "音高后缀",
+                    "ja": "ピッチ接尾辞"
+                },
+                "defaultValue": ""
+            },
+            {
+                "type": "enum",
+                "name": "language",
+                "label": {
+                    "en": "Language",
+                    "zh": "语言",
+                    "ja": "言語"
+                },
+                "defaultValue": "Japanese",
+                "options": [
+                    "Japanese",
+                    "Chinese",
+                    "English"
+                ],
+                "optionDisplayedNames": [
+                    {
+                        "en": "Japanese (JA)",
+                        "zh": "日语 (JA)",
+                        "ja": "日本語 (JA)"
+                    },
+                    {
+                        "en": "Chinese (ZH)",
+                        "zh": "中文 (ZH)",
+                        "ja": "中国語 (ZH)"
+                    },
+                    {
+                        "en": "English (EN)",
+                        "zh": "英语 (EN)",
+                        "ja": "英語 (EN)"
+                    }
+                ]
+            },
+            {
+                "type": "boolean",
+                "name": "ignoreVCV",
+                "label": {
+                    "en": "Ignore VCV",
+                    "zh": "忽略 VCV",
+                    "ja": "VCV を除く"
+                },
+                "defaultValue": false,
+                "enableIf": "format=Vocaloid"
+            },
+            {
+                "type": "integer",
+                "name": "sampleRate",
+                "label": {
+                    "en": "Sample rate (Hz)",
+                    "zh": "采样率（Hz）",
+                    "ja": "サンプルレート（Hz）"
+                },
+                "defaultValue": 44100,
+                "enableIf": "format=Vocaloid"
+            },
+            {
+                "type": "rawFile",
+                "name": "exportPath",
+                "label": {
+                    "en": "Export path (folder)",
+                    "zh": "导出路径（文件夹）",
+                    "ja": "書き出し先（フォルダ）"
+                },
+                "description": {
+                    "en": "Vocaloid requires this. For other engines, leave empty to export into each sample folder, or set it to export all into this folder (pitch suffix added for multiple pitches).",
+                    "zh": "Vocaloid 必填。其他引擎留空则导出到各自样本文件夹，填写则统一导出到该文件夹（多音高时加后缀）。",
+                    "ja": "Vocaloid は必須。他エンジンは空なら各サンプルフォルダへ、指定ならそのフォルダへ（複数ピッチで接尾辞付与）。"
+                },
+                "defaultValue": "",
+                "optional": true,
+                "isFolder": true
+            },
+            {
+                "type": "enum",
+                "name": "vcScheme",
+                "label": {
+                    "en": "VC merge scheme",
+                    "zh": "VC 合并方案",
+                    "ja": "VC 結合スキーム"
+                },
+                "defaultValue": "",
+                "options": [
+                    "",
+                    "JA-Default",
+                    "JA-Lite",
+                    "JA-Nano",
+                    "ZH-Default",
+                    "ZH-Full",
+                    "ZH-Lite",
+                    "ZH-Nano"
+                ],
+                "optionDisplayedNames": [
+                    {
+                        "en": "Auto (first scheme)",
+                        "zh": "自动（首个方案）",
+                        "ja": "自動（最初の方式）"
+                    },
+                    {
+                        "en": "JA-Default",
+                        "zh": "JA-Default",
+                        "ja": "JA-Default"
+                    },
+                    {
+                        "en": "JA-Lite",
+                        "zh": "JA-Lite",
+                        "ja": "JA-Lite"
+                    },
+                    {
+                        "en": "JA-Nano",
+                        "zh": "JA-Nano",
+                        "ja": "JA-Nano"
+                    },
+                    {
+                        "en": "ZH-Default",
+                        "zh": "ZH-Default",
+                        "ja": "ZH-Default"
+                    },
+                    {
+                        "en": "ZH-Full",
+                        "zh": "ZH-Full",
+                        "ja": "ZH-Full"
+                    },
+                    {
+                        "en": "ZH-Lite",
+                        "zh": "ZH-Lite",
+                        "ja": "ZH-Lite"
+                    },
+                    {
+                        "en": "ZH-Nano",
+                        "zh": "ZH-Nano",
+                        "ja": "ZH-Nano"
+                    }
+                ]
+            },
+            {
+                "type": "rawFile",
+                "name": "aliasMap",
+                "label": {
+                    "en": "Alias map (file)",
+                    "zh": "alias 映射表（文件）",
+                    "ja": "alias マッピング表（ファイル）"
+                },
+                "description": {
+                    "en": "Optional key=value alias overrides, one per line.",
+                    "zh": "可选的 alias 覆盖表，每行 key=value。",
+                    "ja": "任意の alias 上書き表（1行1組 key=value）。"
+                },
+                "defaultValue": "",
+                "optional": true,
+                "acceptExtensions": [
+                    "txt",
+                    "map",
+                    "json"
+                ]
+            },
+            {
+                "type": "rawFile",
+                "name": "mappingTable",
+                "label": {
+                    "en": "Mapping table (round-trip)",
+                    "zh": "映射表（还原）",
+                    "ja": "マッピング表（復元）"
+                },
+                "description": {
+                    "en": "phonemeflow-mapping.json from the importer.",
+                    "zh": "导入器生成的 phonemeflow-mapping.json。",
+                    "ja": "インポーターが出力した phonemeflow-mapping.json。"
+                },
+                "defaultValue": "",
+                "optional": true,
+                "acceptExtensions": [
+                    "json"
+                ]
+            }
+        ]
+    },
+    "scriptFiles": [
+        "phonemeflow-exporter.js"
+    ]
+}

@@ -1,0 +1,266 @@
+{
+    "name": "phonemeflow-labeler",
+    "version": 5,
+    "serialVersion": 2,
+    "singleFile": false,
+    "extension": "json",
+    "defaultInputFilePath": null,
+    "displayedName": {
+        "en": "PhonemeFlow labeler",
+        "zh": "音素流标注器",
+        "ja": "音素フロー・ラベラー"
+    },
+    "author": "slidingwall",
+    "email": "slidingwall@outlook.com",
+    "description": {
+        "en": "Phoneme-flow labeler for UTAU, DeepVocal, VocalSharp and Vocaloid.",
+        "zh": "面向 UTAU、DeepVocal、VocalSharp、Vocaloid 的音素流标注器。",
+        "ja": "UTAU・DeepVocal・VocalSharp・Vocaloid 向けの音素フローラベラー。"
+    },
+    "website": "slidingwall.github.io",
+    "continuous": true,
+    "allowSameNameEntry": true,
+    "defaultEntryName": "pau",
+    "defaultValues": [
+        50,
+        383.333,
+        716.667,
+        1050
+    ],
+    "fields": [
+        {
+            "name": "ss",
+            "label": {
+                "en": "SS",
+                "zh": "稳始",
+                "ja": "定始"
+            },
+            "height": 0.8,
+            "filling": null,
+            "color": "#5DCAA5",
+            "dragBase": true,
+            "constraints": [
+                {
+                    "max": 1
+                }
+            ],
+            "shortcutIndex": 1
+        },
+        {
+            "name": "se",
+            "label": {
+                "en": "SE",
+                "zh": "稳止",
+                "ja": "定終"
+            },
+            "height": 0.55,
+            "filling": "ss",
+            "color": "#ED93B1",
+            "dragBase": true,
+            "constraints": [
+                {
+                    "min": 0
+                }
+            ],
+            "shortcutIndex": 2
+        }
+    ],
+    "extraFields": [],
+    "lockedDrag": {
+        "useDragBase": true,
+        "useStart": true
+    },
+    "overflowBeforeStart": "AdjustBorder",
+    "overflowAfterEnd": "AdjustBorder",
+    "decimalDigit": 6,
+    "entrySimilarityWeights": {
+        "name": 0.3,
+        "sample": 0,
+        "start": 0.2,
+        "end": 0.2,
+        "points": [
+            0.15,
+            0.15
+        ],
+        "extras": [],
+        "tag": 0,
+        "threshold": 0.75
+    },
+    "properties": [
+        {
+            "name": "start",
+            "displayedName": {
+                "en": "Start",
+                "zh": "起点",
+                "ja": "開始"
+            },
+            "valueGetter": [
+                "value = entry.start"
+            ],
+            "valueSetter": [
+                "entry.start = value"
+            ],
+            "shortcutIndex": 0
+        },
+        {
+            "name": "ss",
+            "displayedName": {
+                "en": "SS",
+                "zh": "稳始",
+                "ja": "定始"
+            },
+            "valueGetter": [
+                "var d = entry.end - entry.start;",
+                "value = d > 0 ? (entry.points[0] - entry.start) / d : 0;"
+            ],
+            "valueSetter": [
+                "var d = entry.end - entry.start;",
+                "entry.points[0] = entry.start + value * d;"
+            ],
+            "shortcutIndex": 1
+        },
+        {
+            "name": "se",
+            "displayedName": {
+                "en": "SE",
+                "zh": "稳止",
+                "ja": "定終"
+            },
+            "valueGetter": [
+                "var d = entry.end - entry.start;",
+                "value = d > 0 ? (entry.points[1] - entry.start) / d : 0;"
+            ],
+            "valueSetter": [
+                "var d = entry.end - entry.start;",
+                "entry.points[1] = entry.start + value * d;"
+            ],
+            "shortcutIndex": 2
+        },
+        {
+            "name": "end",
+            "displayedName": {
+                "en": "End",
+                "zh": "终点",
+                "ja": "終了"
+            },
+            "valueGetter": [
+                "value = entry.end"
+            ],
+            "valueSetter": [
+                "entry.end = value"
+            ],
+            "shortcutIndex": 3
+        }
+    ],
+    "parser": {
+        "scope": "Modules",
+        "defaultEncoding": "UTF-8",
+        "scripts": "parser.js"
+    },
+    "resourceFiles": [
+        "phonemes.json"
+    ],
+    "writer": {
+        "scope": "Modules",
+        "scripts": "writer.js"
+    },
+    "projectConstructor": {
+        "scripts": "projectConstructor.js"
+    },
+    "parameters": [
+        {
+            "parameter": {
+                "name": "mode",
+                "type": "enum",
+                "label": {
+                    "en": "Mode",
+                    "zh": "模式",
+                    "ja": "モード"
+                },
+                "defaultValue": "File",
+                "options": [
+                    "File",
+                    "Manual"
+                ]
+            }
+        },
+        {
+            "parameter": {
+                "name": "inputFile",
+                "type": "rawFile",
+                "label": {
+                    "en": "[File] Label file (oto.ini / dvcfg / vsdxmf)",
+                    "zh": "[File] 标注文件（oto.ini / dvcfg / vsdxmf）",
+                    "ja": "[File] ラベルファイル（oto.ini / dvcfg / vsdxmf）"
+                },
+                "defaultValue": "",
+                "optional": true,
+                "acceptExtensions": [
+                    "ini",
+                    "dvcfg",
+                    "vsdxmf"
+                ]
+            }
+        },
+        {
+            "parameter": {
+                "name": "writeMapping",
+                "type": "boolean",
+                "label": {
+                    "en": "[File] Write mapping table",
+                    "zh": "[File] 写出映射表",
+                    "ja": "[File] マッピング表を書く"
+                },
+                "defaultValue": true
+            }
+        },
+        {
+            "parameter": {
+                "name": "leadingSilence",
+                "type": "float",
+                "label": {
+                    "en": "[Manual] Leading silence (ms)",
+                    "zh": "[Manual] 前导静音（毫秒）",
+                    "ja": "[Manual] 先行無音（ミリ秒）"
+                },
+                "defaultValue": 1500
+            }
+        },
+        {
+            "parameter": {
+                "name": "bpm",
+                "type": "float",
+                "label": {
+                    "en": "[Manual] BPM",
+                    "zh": "[Manual] 速度（BPM）",
+                    "ja": "[Manual] テンポ（BPM）"
+                },
+                "defaultValue": 120
+            }
+        },
+        {
+            "parameter": {
+                "name": "entryCount",
+                "type": "integer",
+                "label": {
+                    "en": "[Manual] Entry count",
+                    "zh": "[Manual] 条目数量",
+                    "ja": "[Manual] エントリ数"
+                },
+                "defaultValue": 8
+            }
+        },
+        {
+            "parameter": {
+                "name": "defaultPhoneme",
+                "type": "string",
+                "label": {
+                    "en": "[Manual] Default phoneme",
+                    "zh": "[Manual] 默认音素",
+                    "ja": "[Manual] デフォルト音素"
+                },
+                "defaultValue": "(empty)"
+            }
+        }
+    ]
+}

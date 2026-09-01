@@ -1,0 +1,21 @@
+[
+  { "language": "ZH-PINYIN", "table": {
+    "a": "a", "b": "p", "c": "ts_h","d": "t", "e": "7", "f": "f","g": "k", "h": "x", "i": "i","j": "ts\\", "k": "k_h", "l": "l",
+    "m": "m", "n": "n", "o": "o","p": "p_h", "r": "z`", "s": "s","t": "t_h", "u": "u","v": "y","x": "s\\", "z": "ts", "ai": "aI",
+    "an": "a_n", "ao": "AU", "ch": "ts`_h","ei": "ei", "en": "@_n", "er": "@`","i0": "i\\", "ia": "ia", "ie": "iE_r",
+    "in": "i_n", "ir": "i`", "iu": "i@U","ou": "@U", "sh": "s`", "zh": "ts`","ua": "ua", "ue": "yE_r", "ui": "uei",
+    "un": "u@_n", "uo": "uo", "vn": "y_n","ang": "AN", "eng": "@N", "uang": "uAN","ian": "iE_n", "iao": "iAU", "ing": "iN",
+    "ong": "UN", "uai": "uaI", "uan": "ua_n","van": "y{_n", "iang": "iAN", "iong": "iUN","ueng": "u@N","q":"ts\\_h"}
+  },
+  { "language": "JA-ROMAJI", "table": {
+    "N": "N", "a": "a", "b": "b","d": "d", "e": "e", "f": "p\\","g": "g", "h": "h", "i": "i","j": "dZ", "k": "k", "m": "m",
+    "n": "n", "o": "o", "p": "p","r": "4", "s": "s", "t": "t","u": "M", "v": "v", "z": "dz","by": "b'", "ch": "tS", "dy": "d'",
+    "dz": "dz", "gy": "g'", "hy": "C","ky": "k'", "my": "m'", "ny": "J","py": "p'", "ry": "r'", "sh": "S","ts": "ts", "ty": "tS"}
+  },
+  { "language": "EN-ARPABET", "table": {
+    "b": "bh", "d": "dh", "f": "f","g": "gh", "k": "kh", "l": "l0","m": "m", "n": "n", "p": "ph","r": "r", "s": "s", "t": "th",
+    "v": "v", "z": "z", "aa": "Q","ae": "{", "ah": "V", "ao": "O:","aw": "aU", "ax": "@", "ay": "aI","ch": "tS", "dh": "D", 
+    "y": "j","dx": "4", "eh": "e", "er": "@r","ey": "eI", "hh": "h", "ih": "I","iy": "i:", "jh": "dZ", "ng": "N",
+    "ow": "@U", "oy": "OI", "sh": "S","th": "T", "w": "w", "uh": "U","uw": "u:", "zh": "Z"}
+  }
+]

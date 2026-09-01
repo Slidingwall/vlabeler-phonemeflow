@@ -1,0 +1,77 @@
+[
+  { "language": "JA-ROMAJI", "vcSchemes": [
+    { "schemeId": "JA-Default",
+      "vowels": [
+        "a", "i", "u", "e", "o", "n", "N"
+      ],
+      "consonants": [
+        "k", "g", "s", "sh", "z", "j", "t", "ch", "ts", "n",
+        "h", "f", "m", "y", "r", "w", "p", "b", "d", "v",
+        "ky", "gy", "ny", "hy", "py", "by", "my", "ry", "ty", "dy"
+      ]
+    },
+    { "schemeId": "JA-Lite",
+      "vowels": [
+        "a", "i", "u", "e", "o", "n", "N"
+      ],
+      "consonants": [
+        "k", "g", "s", "sh", "z", "j", "t", "ch", "ts", "n",
+        "h", "f", "m", "y", "r", "w", "p", "b", "d", "v"
+      ]
+    },
+    { "schemeId": "JA-Nano",
+      "vowels": [
+        "a", "i", "u", "e", "o", "n", "N"
+      ],
+      "consonants": [
+        "k", "s", "sh", "t", "ch", "ts", "n", "h", "f", "m",
+        "y", "r", "w", "p"
+      ]
+    }
+  ] },
+  { "language": "ZH-PINYIN", "vcSchemes": [
+    { "schemeId": "ZH-Default",
+      "vowels": [
+        "a", "o", "e", "i", "u", "v", "i0", "ir", "ai", "ei",
+        "ao", "ou", "ie", "er", "an", "en", "in", "vn", "ian", "ang",
+        "eng", "ing", "ong"
+      ],
+      "consonants": [
+        "b", "p", "m", "f", "d", "t", "n", "l", "g", "k",
+        "h", "j", "q", "x", "zh", "ch", "sh", "r", "z", "c",
+        "s", "y", "w", "V"
+      ]
+    },
+    { "schemeId": "ZH-Full",
+      "vowels": [
+        "a", "o", "e", "i", "u", "v", "i0", "ir", "ai", "ei",
+        "ao", "ou", "ie", "er", "an", "en", "in", "vn", "ian", "ang",
+        "eng", "ing", "ong"
+      ],
+      "consonants": [
+        "p", "m", "f", "t", "n", "l", "k", "h", "q", "x",
+        "ch", "sh", "r", "c", "s", "y", "w", "V"
+      ]
+    },
+    { "schemeId": "ZH-Lite",
+      "vowels": [
+        "a", "o", "e", "i", "u", "v", "i0", "ir", "ei", "ou",
+        "ie", "er", "en", "eng"
+      ],
+      "consonants": [
+        "p", "m", "f", "t", "n", "l", "k", "h", "q", "x",
+        "ch", "sh", "r", "c", "s", "y", "w", "V"
+      ]
+    },
+    { "schemeId": "ZH-Nano",
+      "vowels": [
+        "a", "o", "e", "i", "u", "v", "i0", "ir", "ei", "ie",
+        "er", "en", "eng"
+      ],
+      "consonants": [
+        "p", "m", "f", "t", "n", "l", "k", "h", "q", "x",
+        "ch", "sh", "r", "c", "s", "y", "w", "V"
+      ]
+    }
+  ] }
+]

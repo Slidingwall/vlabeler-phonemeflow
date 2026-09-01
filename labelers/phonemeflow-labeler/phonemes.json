@@ -1,0 +1,18 @@
+[
+  { "language": "EN-ARPABET", "phonemes": {
+    "vowels": ["aa", "ae", "ah", "ao", "aw", "ax", "ay", "eh", "er", "ey", "ih", "iy", "ow", "oy", "uh", "uw"],
+    "continuant": ["y", "w", "r", "m", "n", "ng", "l", "f", "v", "s", "z", "sh", "zh", "th", "dh", "hh", "ch", "jh", "dr", "tr"],
+    "plosive": ["p", "b", "t", "d", "k", "g", "dx", "q", "cl"]
+  } },
+  { "language": "JA-ROMAJI", "phonemes": {
+    "vowels": ["a", "i", "u", "e", "o"],
+    "continuant": ["y", "w", "v", "m", "n", "N", "my", "ny", "s", "sh", "h", "hy", "f", "r", "ry", "j", "ch", "ts", "z", "dz"],
+    "plosive": ["k", "g", "t", "d", "p", "b", "cl", "ky", "gy", "py", "by", "dy", "ty", "kw", "gw"]
+  } },
+  { "language": "ZH-PINYIN", "phonemes": {
+    "vowels": ["a", "o", "e", "i", "u", "v", "i0", "ir", "ai", "ei", "ui", "ao", "ou", "iu", "ie", "ue", "er", "an", "en", "in",
+     "un", "vn", "ang", "eng", "ing", "ong", "ia", "ua", "uo", "uai", "iao", "ian", "uan", "van", "iang", "uang", "iong", "ueng"],
+    "continuant": ["y", "w", "V", "m", "n", "l", "f", "s", "sh", "x", "h", "r", "z", "c", "zh", "ch", "j", "q"],
+    "plosive": ["b", "p", "d", "t", "g", "k"]
+  } }
+]
